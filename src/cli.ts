@@ -7,6 +7,7 @@ import { Command } from 'commander';
 import { runScan } from './scanner';
 import { renderTerminalReport } from './report/terminal';
 import { renderJsonReport } from './report/json';
+import { generateHtmlReport } from './report/html';
 import { ScanOptions, ModuleName } from './types';
 
 /** Dynamic import helper for ESM-only chalk. */
@@ -107,9 +108,8 @@ export async function cli(): Promise<void> {
           renderJsonReport(report);
           break;
         case 'html':
-          // HTML report is a future feature
-          console.log('HTML report is not yet implemented. Falling back to terminal.');
-          renderTerminalReport(report);
+          generateHtmlReport(report, 'devarmor-report.html');
+          console.log('\nHTML report generated at devarmor-report.html');
           break;
         case 'terminal':
         default:
