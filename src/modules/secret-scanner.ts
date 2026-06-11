@@ -197,7 +197,7 @@ const SCAN_FILENAMES = new Set([
 /** Directories to skip during scanning. */
 const SKIP_DIRS = new Set([
   'node_modules', '.git', 'dist', 'build', 'coverage', '__pycache__',
-  '.next', '.nuxt', 'vendor', 'target', 'bin', 'obj',
+  '.next', '.nuxt', 'vendor', 'target', 'bin', 'obj', 'registry',
 ]);
 
 /** Maximum file size to scan (1MB). */
