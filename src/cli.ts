@@ -105,7 +105,7 @@ export async function cli(): Promise<void> {
       // Render the requested report format
       switch (scanOptions.report) {
         case 'json':
-          renderJsonReport(report);
+          await renderJsonReport(report);
           break;
         case 'html':
           generateHtmlReport(report, 'devarmor-report.html');
@@ -113,7 +113,7 @@ export async function cli(): Promise<void> {
           break;
         case 'terminal':
         default:
-          renderTerminalReport(report);
+          await renderTerminalReport(report);
           break;
       }
 
